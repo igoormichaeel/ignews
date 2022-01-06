@@ -1,0 +1,48 @@
+.container {
+  width: 100vw;
+}
+
+.posts {
+  max-width: 728px;
+
+  margin: 5rem auto;
+  padding: 0 2rem;
+
+  a {
+    display: flex;
+    flex-direction: column;
+
+    & + a {
+      margin-top: 2rem;
+      padding-top: 2rem;
+
+      border-top: solid 1px var(--gray-875);
+    }
+
+    time,
+    p {
+      font-size: 1rem;
+      line-height: 1.625rem;
+      color: var(--gray-300);
+    }
+
+    strong {
+      font-size: 1.5rem;
+      line-height: 2.125rem;
+      font-weight: bold;
+      color: var(--white);
+
+      margin-top: 1rem;
+
+      transition: color 0.2s;
+    }
+
+    p {
+      margin-top: 0.25rem;
+    }
+
+    &:hover strong {
+      color: var(--yellow-500);
+    }
+  }
+}
