@@ -17,6 +17,7 @@ export default NextAuth({
       },
     }),
   ],
+  secret: process.env.GITHUB_CLIENT_SECRET,
   callbacks: {
     async session({ session }) {
       try {
