@@ -13,6 +13,7 @@ export default NextAuth({
       authorization: {
         params: {
           scope: "read:user",
+          redirect_uri: process.env.REDIRECT_URI,
         },
       },
     }),
