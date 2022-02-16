@@ -74,5 +74,11 @@ export default NextAuth({
         return false;
       }
     },
+
+    redirect({ url, baseUrl }) {
+      if (url.startsWith(baseUrl)) return url
+      else if (url.startsWith("/")) return new URL(url, baseUrl).toString()
+      return baseUrl
+    }
   },
 });
