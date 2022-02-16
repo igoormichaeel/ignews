@@ -13,6 +13,7 @@ export default NextAuth({
       authorization: {
         params: {
           scope: "read:user",
+          redirect_uri: process.env.REDIRECT_URI,
         },
       },
     }),
@@ -73,5 +74,11 @@ export default NextAuth({
         return false;
       }
     },
+
+    async redirect({ url, baseUrl }) {
+      return url.startsWith(baseUrl)
+        ? Promise.resolve(url)
+        : Promise.resolve(baseUrl)
+    }
   },
 });
