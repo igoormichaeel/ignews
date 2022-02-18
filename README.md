@@ -23,7 +23,7 @@ A JAMStack application of a news page for subscribers developed at [Rocketseat's
 
 ## Getting Started
 
-### Requiriments
+### Requirements
 
 To run this project in the development mode, you'll need to have:
 - [Git](https://git-scm.com/)
