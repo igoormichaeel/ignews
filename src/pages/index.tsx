@@ -1,10 +1,8 @@
 import { GetStaticProps } from 'next';
-import { useSession } from 'next-auth/react';
 
 import Head from 'next/head';
 import Image from 'next/image';
 
-import avatarSvg from '../../public/images/avatar.svg';
 import { SubscribeButton } from '../components/SubscribeButton';
 import { stripe } from '../services/stripe';
 
@@ -13,7 +11,7 @@ import styles from './home.module.scss';
 interface HomeProps {
   product: {
     priceId: string;
-    amount: number;
+    amount: string;
   };
 }
 
@@ -37,7 +35,12 @@ export default function Home({ product }: HomeProps) {
           <SubscribeButton />
         </section>
 
-        <Image src={avatarSvg} alt="Avatar svg" />
+        <Image
+          src="/images/avatar.svg"
+          alt="Avatar svg"
+          width="336"
+          height="521"
+        />
       </main>
     </>
   );
