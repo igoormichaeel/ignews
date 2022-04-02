@@ -1,7 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
-import PostPreview, { getStaticProps } from '../../pages/posts/preview/[slug]';
+import PostPreview, {
+  getStaticPaths,
+  getStaticProps,
+} from '../../pages/posts/preview/[slug]';
 
 import { getPrismicClient } from '../../services/prismic';
 
@@ -92,6 +95,16 @@ describe('Post preview page', () => {
             updatedAt: '01 de abril de 2022',
           },
         },
+      })
+    );
+  });
+
+  it('loads initial paths', () => {
+    const getStaticPathsResponse = getStaticPaths({} as any);
+
+    expect(getStaticPathsResponse).toEqual(
+      expect.objectContaining({
+        paths: [],
       })
     );
   });
